@@ -18,7 +18,7 @@ export interface CharacterApi {
   type: string;
   gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
   origin: LocationApi;
-  LocationApi: LocationApi;
+  location: LocationApi;
   image: string;
   episode: string[];
   url: string;
