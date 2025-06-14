@@ -18,6 +18,7 @@ import * as classes from './character.styles'
 import { CharacterEntityVm } from './character.vm'
 import { formatDate, getStatusColor } from '#common/utils'
 import { GenderIcon } from '#common/components'
+import { DetailBox } from './components/DetailBox'
 
 interface Props {
   character: CharacterEntityVm
@@ -85,40 +86,28 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
         <Divider sx={{ mb: 2 }} />
 
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <DetailBox label="Género" description={character.gender}>
             {GenderIcon(character.gender)}
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              <strong>Género:</strong> {character.gender}
-            </Typography>
-          </Box>
+          </DetailBox>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <DetailBox label="Origen" description={character.origin}>
             <LocationOn sx={{ fontSize: 16, color: 'primary.main' }} />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              <strong>Origen:</strong> {character.origin}
-            </Typography>
-          </Box>
+          </DetailBox>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <DetailBox label="Última vez visto" description={character.location}>
             <LocationOn sx={{ fontSize: 16, color: 'secondary.main' }} />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              <strong>Última vez visto:</strong> {character.location}
-            </Typography>
-          </Box>
+          </DetailBox>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <DetailBox
+            label="Nº de episodios"
+            description={character.numberOfEpisodes}
+          >
             <Tv sx={{ fontSize: 16, color: 'info.main' }} />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              <strong>Nº de Episodios:</strong> {character.numberOfEpisodes}
-            </Typography>
-          </Box>
+          </DetailBox>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <DetailBox label="Creado" description={formatDate(character.created)}>
             <CalendarToday sx={{ fontSize: 16, color: 'text.secondary' }} />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              <strong>Creado:</strong> {formatDate(character.created)}
-            </Typography>
-          </Box>
+          </DetailBox>
         </Box>
       </CardContent>
     </Card>
