@@ -1,7 +1,7 @@
 import { CharacterApi, CharacterUpdateApi } from './character.api-model';
 
 export const getCharacter = async (id: string): Promise<CharacterApi> => {
-  const response = await fetch(`http://localhost:3000/api/character/${id}`)
+  const response = await fetch(`/api/character/${id}`)
   if (response.ok) {
     const data = await response.json() as CharacterApi;
     return data
@@ -12,7 +12,7 @@ export const getCharacter = async (id: string): Promise<CharacterApi> => {
 };
 
 export const updateCharacter = async (character: CharacterUpdateApi): Promise<void> => {
-  const response = await fetch(`http://localhost:3000/api/character/${character.id}`, {
+  const response = await fetch(`/api/character/${character.id}`, {
     method: 'PUT',
     body: JSON.stringify(character)
   })

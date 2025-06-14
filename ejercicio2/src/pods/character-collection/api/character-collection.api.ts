@@ -1,7 +1,7 @@
 import { CharacterApi, CharacterCollectionApi } from './character-collection.api-model';
 
 export const getCharacterCollection = async (): Promise<CharacterApi[]> => {
-  const response = await fetch(`http://localhost:3000/api/character`)
+  const response = await fetch(`/api/character`)
   if (response.ok) {
     const data = await response.json() as CharacterCollectionApi;
     return data.results
