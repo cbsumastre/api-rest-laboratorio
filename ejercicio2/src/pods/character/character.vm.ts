@@ -11,6 +11,7 @@ export interface CharacterEntityVm {
   numberOfEpisodes: number;
   url: string;
   created: string;
+  bestSentence?: string;
 }
 
 

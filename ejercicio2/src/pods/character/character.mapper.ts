@@ -16,7 +16,17 @@ export const mapCharacterFromApiToVm = (
   image: character.image,
   numberOfEpisodes: character.episode?.length,
   url: character.url,
-  created: character.created.toString()
+  created: character.created.toString(),
+  bestSentence: character.bestSentence
+});
+
+
+export const mapCharacterFromVmToApi = (
+  character: viewModel.CharacterEntityVm
+): apiModel.CharacterUpdateApi => ({
+  ...character,
+  id: Number(character.id),
+  bestSentence: character.bestSentence
 });
 
 

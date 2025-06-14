@@ -16,6 +16,12 @@ export interface CharacterApi {
   episode: string[];
   url: string;
   created: Date;
+  bestSentence?: string;
+}
+
+export interface CharacterUpdateApi {
+  id: number;
+  bestSentence?: string;
 }
 
 
