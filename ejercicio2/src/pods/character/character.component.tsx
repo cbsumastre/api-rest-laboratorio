@@ -127,7 +127,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             {GenderIcon(character.gender)}
           </DetailBox>
 
-          <DetailBox label="Origen" description={character.origin}>
+          <DetailBox label="Primera vez visto" description={character.origin}>
             <LocationOn sx={{ fontSize: 16, color: 'primary.main' }} />
           </DetailBox>
 
