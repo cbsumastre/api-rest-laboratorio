@@ -17,20 +17,14 @@ import {
 } from '@mui/material'
 
 import SaveIcon from '@mui/icons-material/Save'
-import {
-  LocationOn,
-  Tv,
-  CalendarToday,
-  FormatQuote,
-  Refresh,
-} from '@mui/icons-material'
+import { LocationOn, Tv, CalendarToday, FormatQuote } from '@mui/icons-material'
 
 import * as classes from './character.styles'
-import { CharacterEntityVm } from './character.vm'
 import { formatDate, getStatusColor } from '#common/utils'
 import { GenderIcon } from '#common/components'
 import { useCharacter } from './character.hook'
 import { DetailBox } from './components/DetailBox'
+import { CharacterEntityVm } from './character.vm'
 
 interface Props {
   character: CharacterEntityVm
@@ -128,11 +122,17 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             {GenderIcon(character.gender)}
           </DetailBox>
 
-          <DetailBox label="Primera vez visto" description={character.origin}>
+          <DetailBox
+            label="Primera vez visto"
+            description={character.origin.name}
+          >
             <LocationOn sx={{ fontSize: 16, color: 'primary.main' }} />
           </DetailBox>
 
-          <DetailBox label="Última vez visto" description={character.location}>
+          <DetailBox
+            label="Última vez visto"
+            description={character.location.name}
+          >
             <LocationOn sx={{ fontSize: 16, color: 'secondary.main' }} />
           </DetailBox>
 

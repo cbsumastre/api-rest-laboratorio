@@ -1,6 +1,6 @@
 import { CharacterApi, CharacterUpdateApi } from './character.api-model';
 
-export const getCharacter = async (id: string): Promise<CharacterApi> => {
+export const getCharacter = async (id: number): Promise<CharacterApi> => {
   const response = await fetch(`/api/character/${id}`)
   if (response.ok) {
     const data = await response.json() as CharacterApi;

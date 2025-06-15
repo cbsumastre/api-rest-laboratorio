@@ -1,8 +1,9 @@
-import { CharacterApi, getCharacter, updateCharacter } from './api';
+import { getCharacter, updateCharacter } from './api';
 import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.mapper';
 import { CharacterEntityVm } from './character.vm';
 
-export const useCharacter = (id: string) => {
+
+export const useCharacter = (id: number) => {
     const loadCharacter = async () => {
         const result = await getCharacter(id);
         return mapCharacterFromApiToVm(result)
