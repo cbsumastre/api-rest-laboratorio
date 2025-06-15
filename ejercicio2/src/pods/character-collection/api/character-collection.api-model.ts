@@ -23,6 +23,7 @@ export interface CharacterApi {
   episode: string[];
   url: string;
   created: string;
+  bestSentence?: string;
 }
 
 export interface CharacterCollectionApi {

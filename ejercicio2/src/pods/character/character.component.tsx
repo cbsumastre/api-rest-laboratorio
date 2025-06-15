@@ -67,6 +67,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
     }
     updateBestSentence(updatedCharacter).finally(() => {
       setIsUpdated(false)
+      handleNavigateMain()
     })
   }
 
@@ -151,7 +152,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             <TextField
               fullWidth
               multiline
-              rows={1}
+              rows={2}
               value={bestSentence}
               onChange={(e) => handleEditBestSentence(e.target.value)}
               placeholder="Escribe la mejor frase del personaje..."

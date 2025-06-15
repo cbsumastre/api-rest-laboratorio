@@ -8,10 +8,10 @@ import Avatar from '@mui/material/Avatar'
 
 import * as classes from './character-card.styles'
 import { CharacterEntityVm } from '../character-collection.vm'
-import { Box, Chip, Divider } from '@mui/material'
+import { Box, Chip, Divider, TextField } from '@mui/material'
 import { getStatusColor } from '#common/utils'
 import { GenderIcon } from '#common/components'
-import { LocationOn } from '@mui/icons-material'
+import { FormatQuote, LocationOn } from '@mui/icons-material'
 
 interface Props {
   character: CharacterEntityVm
@@ -61,6 +61,15 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             />
             <Chip label={character.species} variant="outlined" size="small" />
           </Box>
+          {character.bestSentence && (
+            <Box sx={{ display: 'flex', mb: 2, flexWrap: 'wrap' }}>
+              <Typography variant="subtitle2" gutterBottom fontWeight="bold">
+                <FormatQuote sx={{ fontSize: 10, color: 'text.secondary' }} />
+                {character.bestSentence}
+                <FormatQuote sx={{ fontSize: 10, color: 'text.secondary' }} />
+              </Typography>
+            </Box>
+          )}
         </Box>
       </CardContent>
     </Card>
