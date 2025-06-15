@@ -1,8 +1,3 @@
-interface LocationApi {
-  name: string;
-  url: string;
-}
-
 export interface CharacterApi {
   id: number;
   name: string;
@@ -10,11 +5,10 @@ export interface CharacterApi {
   species: string;
   type: string;
   gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
-  origin: LocationApi;
-  location: LocationApi;
+  origin: string;
+  location: string;
   image: string;
   episode: string[];
-  url: string;
   created: Date;
 }
 

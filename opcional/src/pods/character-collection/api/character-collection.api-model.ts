@@ -1,15 +1,3 @@
-interface InfoApi {
-  count: number;
-  pages: number;
-  next: string | null;
-  prev: string | null;
-}
-
-interface LocationApi {
-  name: string;
-  url: string;
-}
-
 export interface CharacterApi {
   id: number;
   name: string;
@@ -17,15 +5,9 @@ export interface CharacterApi {
   species: string;
   type: string;
   gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
-  origin: LocationApi;
-  LocationApi: LocationApi;
+  origin: string;
+  location: string;
   image: string;
   episode: string[];
-  url: string;
-  created: string;
-}
-
-export interface CharacterCollectionApi {
-  info: InfoApi;
-  results: CharacterApi[];
+  created: Date;
 }

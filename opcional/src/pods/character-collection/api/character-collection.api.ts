@@ -1,14 +1,42 @@
-import { CharacterApi, CharacterCollectionApi } from './character-collection.api-model';
+import { graphqlRickAndMortyClient } from '#core/api';
+import { CharacterApi } from './character-collection.api-model';
+
+interface GetCharactersCollectionResponse {
+  characters: {
+    results: CharacterApi[]
+  }
+}
 
 export const getCharacterCollection = async (): Promise<CharacterApi[]> => {
-  const response = await fetch(`https://rickandmortyapi.com/api/character`)
-  if (response.ok) {
-    const data = await response.json() as CharacterCollectionApi;
-    return data.results
-  }
-  const errorMessage = `Error getting characters ${response.status} ${response.statusText}`
-  console.error(errorMessage)
-  throw Error(errorMessage)
+  const query = `
+    query Characters {
+      characters () {
+        results {
+          id
+          name
+          status
+          species
+          type
+          gender
+          origin {
+            name
+          }
+          location {
+            name
+          }
+          image
+          episode() {
+            id
+          }
+          created
+        }
+      }
+    }
+  `
+  const { characters } = await graphqlRickAndMortyClient<GetCharactersCollectionResponse>({
+    query
+  })
+  return characters.results
 };
 
 
