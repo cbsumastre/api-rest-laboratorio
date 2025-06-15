@@ -11,11 +11,12 @@ export const mapCharacterFromApiToVm = (
   species: character.species,
   type: character.type,
   gender: character.gender,
-  origin: character.origin?.name || 'unknown',
-  location: character.location?.name || 'unknown',
+  origin: character.origin,
+  location: character.location,
   image: character.image,
+  firstEpisode: character.episode[0],
+  lastEpisode: character.episode[character.episode.length - 1],
   numberOfEpisodes: character.episode?.length,
-  url: character.url,
   created: character.created.toString()
 });
 

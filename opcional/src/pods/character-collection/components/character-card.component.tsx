@@ -1,17 +1,16 @@
 import * as React from 'react'
 import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
 
 import * as classes from './character-card.styles'
 import { CharacterEntityVm } from '../character-collection.vm'
-import { Box, Chip, Divider } from '@mui/material'
+import { Box, Button, Chip, Divider } from '@mui/material'
 import { getStatusColor } from '#common/utils'
-import { GenderIcon } from '#common/components'
-import { LocationOn } from '@mui/icons-material'
+import { PlayCircleOutline } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
+import { linkRoutes } from '#core/router'
 
 interface Props {
   character: CharacterEntityVm
@@ -20,6 +19,11 @@ interface Props {
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { character, onShow } = props
+  const navigate = useNavigate()
+
+  const handleNavigateEpisode = (id: string) => {
+    navigate(linkRoutes.showEpisode(id))
+  }
 
   return (
     <Card
@@ -30,8 +34,6 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         borderRadius: 2,
         overflow: 'hidden',
       }}
-      onClick={() => onShow(character.id)}
-      className={classes.clickable}
     >
       <CardMedia
         component="img"
@@ -39,6 +41,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         image={character.image}
         alt={character.name}
         sx={{ objectFit: 'cover' }}
+        title={character.name}
       />
 
       <CardContent sx={{ padding: 3 }}>
@@ -61,7 +64,33 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             />
             <Chip label={character.species} variant="outlined" size="small" />
           </Box>
+
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <PlayCircleOutline sx={{ fontSize: 16, color: 'info.main' }} />
+            <Typography variant="body2" sx={{ ml: 1 }}>
+              <strong>Último episodio:</strong> {character.lastEpisode.episode}
+            </Typography>
+            <Button
+              onClick={() => handleNavigateEpisode(character.lastEpisode.id)}
+              size="small"
+              variant="contained"
+            >
+              Ver
+            </Button>
+          </Box>
         </Box>
+        <Button
+          onClick={() => onShow(character.id)}
+          fullWidth
+          variant="contained"
+          sx={{
+            py: 1.2,
+            fontWeight: 'bold',
+          }}
+          title={`Ver detalle de ${character.name}`}
+        >
+          Ver detalle
+        </Button>
       </CardContent>
     </Card>
   )

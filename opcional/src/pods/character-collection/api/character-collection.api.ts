@@ -27,6 +27,7 @@ export const getCharacterCollection = async (): Promise<CharacterApi[]> => {
           image
           episode() {
             id
+      			episode
           }
           created
         }

@@ -18,14 +18,18 @@ export const getCharacter = async (id: string): Promise<CharacterApi> => {
             type
             gender
             origin {
+              id
               name
             }
             location {
+              id
               name
             }
             image
             episode() {
               id
+              name
+              episode
             }
             created
           }
