@@ -1,14 +1,20 @@
-import { CharacterApi, CharacterCollectionApi } from './character-collection.api-model';
+import axios from "axios";
+
+import { CharacterApi } from './character-collection.api-model';
 
 export const getCharacterCollection = async (): Promise<CharacterApi[]> => {
-  const response = await fetch(`https://rickandmortyapi.com/api/character`)
-  if (response.ok) {
-    const data = await response.json() as CharacterCollectionApi;
+  try {
+    const { data } = await axios.get(`https://rickandmortyapi.com/api/character`)
     return data.results
   }
-  const errorMessage = `Error getting characters ${response.status} ${response.statusText}`
-  console.error(errorMessage)
-  throw Error(errorMessage)
+  catch (error) {
+    const errorMessage = `Error getting characters ${error.response.status} ${error.response.statusText}`
+    console.error(errorMessage)
+    throw Error(errorMessage)
+  }
+
+
+
 };
 
 

@@ -1,14 +1,17 @@
+import axios from 'axios';
 import { CharacterApi } from './character.api-model';
 
 export const getCharacter = async (id: string): Promise<CharacterApi> => {
-  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
-  if (response.ok) {
-    const data = await response.json() as CharacterApi;
+  try {
+    const { data } = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     return data
   }
-  const errorMessage = `Error getting character with id ${id}: ${response.status} ${response.statusText}`
-  console.error(errorMessage)
-  throw Error(errorMessage)
+  catch (error) {
+    const { response } = error;
+    const errorMessage = `Error getting character with id ${id}: ${response.status} ${response.statusText}`
+    console.error(errorMessage)
+    throw Error(errorMessage)
+  }
 };
 
 

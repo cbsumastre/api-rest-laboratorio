@@ -28,7 +28,7 @@ export const AppLayout: React.FC<Props> = (props) => {
             }}
             title="Go to the main page"
           >
-            <h3>Rick and Morty</h3>
+            <h3>Rick and Morty (con axios)</h3>
           </IconButton>
         </Toolbar>
       </AppBar>
