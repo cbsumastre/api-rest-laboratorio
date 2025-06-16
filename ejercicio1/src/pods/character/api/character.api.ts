@@ -10,7 +10,6 @@ export const getCharacter = async (id: string): Promise<CharacterApi> => {
     const { response } = error;
     const errorMessage = `Error getting character with id ${id}: ${response.status} ${response.statusText}`
     console.error(errorMessage)
-    throw Error(errorMessage)
   }
 };
 
