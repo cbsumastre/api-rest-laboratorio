@@ -1,7 +1,7 @@
 {
   "name": "rick-morty-rest-api-exercise-1",
   "version": "1.0.0",
-  "description": "Rick and Morty Rest API Ejercicio 1",
+  "description": "Rick and Morty Rest API Ejercicio 1 (con axios)",
   "type": "module",
   "scripts": {
     "start": "vite --port 8080",

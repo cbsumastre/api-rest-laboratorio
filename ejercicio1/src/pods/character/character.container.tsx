@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { CharacterEntityVm } from './character.vm'
 
+import { CharacterEntityVm } from './character.vm'
 import { useCharacter } from './character.hook'
 import { CharacterComponent } from './character.component'
 
