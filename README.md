@@ -12,15 +12,15 @@ Cómo punto de entrada vamos a partir del Boilerplate: [laboratory](https://gith
 
 Tendrás que:
 
-- Cambiar las escenas, rutas y pods a _character-collection_ y _character_
+- Cambiar las escenas, rutas y pods a _character-collection_ y _character_ ✅
 
 ### Ejercicio 1
 
-- Crear un proyecto en el que vamos a obtener una lista de actores de la API Rest de Rick & Morty, utilizando Axios o Fetch
+- Crear un proyecto en el que vamos a obtener una lista de actores de la API Rest de Rick & Morty, utilizando Axios o Fetch ✅
 
 [REST Docs](https://rickandmortyapi.com/documentation/#rest)
 
-- Navegando a la página de un _character_ vamos a mostrar el detalle del mismo (segunda llamada a la API Rest).
+- Navegando a la página de un _character_ vamos a mostrar el detalle del mismo (segunda llamada a la API Rest). ✅
 
 ### Ejercicio 2
 
@@ -36,13 +36,13 @@ El campo se llama _bestSentence_.
 
 ####  Objetivo:
 
-- Reemplazar los endpoints para que apunten al servidor local
+- Reemplazar los endpoints para que apunten al servidor local ✅
 
-- El usuario puede editar y guardar el campo bestSentence.
+- El usuario puede editar y guardar el campo bestSentence. ✅
 
 ### Opcional
 
-- Implementar la misma aplicación (del ejercicio 1) pero tirando de la API de GraphQL
+- Implementar la misma aplicación (del ejercicio 1) pero tirando de la API de GraphQL ✅
 
 [GraphQL Docs](https://rickandmortyapi.com/documentation/#graphql)
 
@@ -54,4 +54,4 @@ El campo se llama _bestSentence_.
 - Implementar busqueda de _characters_.
 - Implementar componente para recuperar:
   - Lugares.
-  - Episodios.
+  - Episodios. ✅
