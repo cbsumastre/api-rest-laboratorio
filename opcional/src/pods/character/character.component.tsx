@@ -20,7 +20,6 @@ import {
   PlayCircleOutline,
 } from '@mui/icons-material'
 
-import * as classes from './character.styles'
 import { CharacterEntityVm } from './character.vm'
 import { formatDate, getStatusColor } from '#common/utils'
 import { GenderIcon } from '#common/components'

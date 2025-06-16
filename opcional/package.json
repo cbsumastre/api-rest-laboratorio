@@ -1,7 +1,7 @@
 {
-  "name": "rick-morty-rest-api-exercise-1",
+  "name": "rick-morty-rest-api-exercise-opcional",
   "version": "1.0.0",
-  "description": "Rick and Morty Rest API Ejercicio 1",
+  "description": "Rick and Morty Rest API Ejercicio Opcional (GraphQL)",
   "type": "module",
   "scripts": {
     "start": "vite --port 8080",
@@ -24,7 +24,6 @@
     "@lemoncode/fonk-min-number-validator": "^1.2.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
-    "axios": "^1.9.0",
     "formik": "^2.4.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

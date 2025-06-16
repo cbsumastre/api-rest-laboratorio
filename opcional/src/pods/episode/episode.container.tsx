@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { EpisodeEntityVm } from './episode.vm'
 
+import { EpisodeEntityVm } from './episode.vm'
 import { useEpisode } from './episode.hook'
 import { EpisodeComponent } from './episode.component'
 

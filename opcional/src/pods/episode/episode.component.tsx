@@ -7,23 +7,18 @@ import {
   Card,
   CardContent,
   Typography,
-  Chip,
   Box,
   Divider,
   Button,
 } from '@mui/material'
 import {
-  LocationOn,
-  Tv,
   CalendarToday,
   Schedule,
   People,
-  Folder,
   Category,
   Movie,
 } from '@mui/icons-material'
 
-import * as classes from './episode.styles'
 import { formatDate } from '#common/utils'
 import { EpisodeEntityVm } from './episode.vm'
 

@@ -5,7 +5,6 @@ interface GetCharacterResponse {
   character: CharacterApi
 }
 
-
 export const getCharacter = async (id: string): Promise<CharacterApi> => {
 
   const query = `
