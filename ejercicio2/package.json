@@ -1,7 +1,7 @@
 {
   "name": "rick-morty-rest-api-exercise-2",
   "version": "1.0.0",
-  "description": "Rick and Morty Rest API Ejercicio 2",
+  "description": "Rick and Morty Rest API Ejercicio 2 (con fetch)",
   "type": "module",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev start:server",
@@ -27,7 +27,6 @@
     "@lemoncode/fonk-min-number-validator": "^1.2.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
-    "axios": "^1.9.0",
     "formik": "^2.4.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

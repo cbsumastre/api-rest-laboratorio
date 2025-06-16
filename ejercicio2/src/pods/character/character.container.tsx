@@ -1,14 +1,14 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { CharacterEntityVm } from './character.vm'
 
+import { CharacterEntityVm } from './character.vm'
 import { useCharacter } from './character.hook'
 import { CharacterComponent } from './character.component'
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<CharacterEntityVm>()
   const { id } = useParams<{ id: string }>()
-  const { loadCharacter } = useCharacter(id)
+  const { loadCharacter } = useCharacter(Number(id))
 
   React.useEffect(() => {
     if (id) {

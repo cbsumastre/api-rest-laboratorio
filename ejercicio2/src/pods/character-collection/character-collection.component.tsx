@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { CharacterEntityVm } from './character-collection.vm'
 import * as classes from './character-collection.styles'
 import { CharacterCard } from './components/character-card.component'

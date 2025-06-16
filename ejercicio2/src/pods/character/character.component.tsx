@@ -59,10 +59,13 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       ...character,
       bestSentence,
     }
-    updateBestSentence(updatedCharacter).finally(() => {
-      setIsUpdated(false)
-      handleNavigateMain()
-    })
+    updateBestSentence(updatedCharacter)
+      .then((result) => {
+        if (result) handleNavigateMain()
+      })
+      .finally(() => {
+        setIsUpdated(false)
+      })
   }
 
   return (
