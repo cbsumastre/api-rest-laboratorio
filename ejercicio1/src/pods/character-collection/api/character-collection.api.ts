@@ -8,12 +8,14 @@ export const getCharacterCollection = async (): Promise<CharacterApi[]> => {
     return data.results
   }
   catch (error) {
-    const errorMessage = `Error getting characters ${error.response.status} ${error.response.statusText}`
-    console.error(errorMessage)
+    if (error.response) {
+      const errorMessage = `Error getting characters ${error.response.status} ${error.response.statusText}`
+      console.error(errorMessage)
+    }
+    else {
+      console.error(`Unexpected error ${error}`);
+    }
   }
-
-
-
 };
 
 
