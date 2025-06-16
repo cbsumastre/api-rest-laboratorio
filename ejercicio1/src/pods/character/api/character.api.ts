@@ -3,7 +3,7 @@ import { CharacterApi } from './character.api-model';
 
 export const getCharacter = async (id: string): Promise<CharacterApi> => {
   try {
-    const { data } = await axios.get(`https://rickandmortyapi.com/api/character2/${id}`)
+    const { data } = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     return data
   }
   catch (error) {
